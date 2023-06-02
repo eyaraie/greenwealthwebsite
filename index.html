@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Green WealthTech</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="fontawesome-free-5.9.0-web/css/all.min.css" />
+    <!-- styles css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <style>
+
+*/
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.title p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-img {
+  margin-bottom: 2rem;
+}
+.about-img img {
+  border-radius: var(--radius);
+  object-fit: cover;
+  height: 20rem;
+}
+@media screen and (min-width: 992px) {
+  .about-img {
+    margin-bottom: 0;
+  }
+
+  .about-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+}
+.about {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.btn-container {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.tab-btn:nth-child(1) {
+  border-top-left-radius: var(--radius);
+}
+.tab-btn:nth-child(3) {
+  border-top-right-radius: var(--radius);
+}
+
+
+.tab-btn {
+  padding: 1rem 0;
+  border: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  display: block;
+  background: var(--clr-grey-9);
+  cursor: pointer;
+  transition: var(--transition);
+  letter-spacing: var(--spacing);
+}
+.tab-btn:hover:not(.active) {
+  background: var(--clr-primary-10);
+  color: var(--clr-primary-5);
+}
+.about-content {
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  padding: 2rem 1.5rem;
+}
+/* hide content */
+.content {
+  display: none;
+}
+.tab-btn.active {
+  background: var(--clr-white);
+}
+.content.active {
+  display: block;
+}
+
+/*
+=============== 
+Questions
+===============
+*/
+
+.title {
+  margin-top: 15vh;
+  margin-bottom: 4rem;
+}
+.title h2 {
+  color: var(--clr-gold);
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+}
+.section-center {
+  max-width: var(--fixed-width);
+}
+.question {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+}
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+}
+
+.question-title p {
+  margin-bottom: 0;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-1);
+}
+.question-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: var(--clr-gold);
+  transition: var(--transition);
+}
+.question-btn:hover {
+  transform: rotate(90deg);
+}
+.question-text {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.question-text p {
+  margin-bottom: 0;
+}
+/* hide text */
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+.minus-icon {
+  display: none;
+}
+.show-text .minus-icon {
+  display: inline;
+}
+.show-text .plus-icon {
+  display: none;
+}
+
+  </style>
+  <body>
+    <!-- header  -->
+    <header id="home">
+      <!-- navbar -->
+      <nav class="navbar">
+        <div class="nav-center">
+          <!-- nav header -->
+          <div class="nav-header">
+            <img src="./images/logoo.svg" class="nav-logo" alt="" />
+            <button
+              type="button"
+              class="nav-toggle"
+              id="nav-toggle"
+              aria-label="nav toggler "
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+          <!-- end of nav header -->
+          <!-- nav links -->
+          <div class="nav-links" id="nav-links">
+            <!-- single link -->
+            <a href="#home" class="scroll-link nav-link">
+              home
+            </a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#about" class=" scroll-link nav-link">
+              about
+            </a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#services" class="nav-link scroll-link">
+              services
+            </a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#featured" class="nav-link scroll-link">
+              featured
+            </a>
+            <!-- end of single link -->
+            <!-- single link -->
+            <a href="#gallery" class="nav-link scroll-link">
+              FAQ
+            </a>
+            <!-- end of single link -->
+          </div>
+          <!-- end of nav links -->
+          <!-- nav social media icons -->
+          <!-- footer icons -->
+          <div class="nav-icons">
+            <a href="https://www.twitter.com" target="_blank" class="nav-icon"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="nav-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="nav-icon"><i class="fab fa-squarespace"></i></a>
+          <!-- end of nav social media icons -->
+        </div>
+      </nav>
+      <!-- hero component -->
+      <div class="hero">
+        <div class="hero-banner">
+          <h1 class="hero-title">Green WealthTech</h1>
+          <p class="hero-text">
+            Make Greener and Smarter Your Financial Decisions !
+          </p>
+          <a href="#featured" class="btn btn-white scroll-link">explore more</a>
+        </div>
+      </div>
+    </header>
+    <!-- end of header  -->
+    <!-- about section -->
+    <section class="section about" id="about">
+      <!-- title  -->
+      <div class="title-wrapper">
+        <h2 class="title">about <span class="subtitle">us</span></h2>
+      </div>
+      <!-- end of title  -->
+      <!-- about-center -->
+      <div class="section-center about-center">
+        <!-- about img wrapper-->
+        <div class="about-img">
+          <img
+            src="./images/aboutt.jpeg"
+            class="about-photo"
+            alt=""
+          />
+        </div>
+        <!-- about info -->
+        <article class="about">
+          <!-- btn container -->
+          <div class="btn-container">
+            <button class="tab-btn active" data-id="history">mission</button>
+            <button class="tab-btn" data-id="vision">vision</button>
+            <button class="tab-btn" data-id="goals">goals</button>
+          </div>
+          <div class="about-content">
+            <!-- single item -->
+            <div class="content active" id="history">
+              <h4>history</h4>
+              <p>
+                I'm baby wolf pickled schlitz try-hard normcore marfa man bun
+                mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
+                rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
+                tilde try-hard, woke fixie banjo man bun. Small batch tumeric
+                mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
+                direct trade hoodie ugh chambray, craft beer pork belly flannel
+                tacos single-origin coffee art party migas plaid pop-up.
+              </p>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="vision">
+              <h4>vision</h4>
+              <p>
+                Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
+                crucifix offal deep v hella biodiesel. Church-key listicle
+                polaroid put a bird on it chillwave palo santo enamel pin,
+                tattooed meggings franzen la croix cray. Retro yr aesthetic four
+                loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
+                Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
+                Roof party hammock master cleanse pop-up truffaut, bicycle
+                rights skateboard affogato readymade sustainable deep v
+                live-edge schlitz narwhal.
+              </p>
+              <ul>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+              </ul>
+            </div>
+            <!-- end of single item -->
+            <!-- single item -->
+            <div class="content" id="goals">
+              <h4>goals</h4>
+              <p>
+                Chambray authentic truffaut, kickstarter brunch taxidermy vape
+                heirloom four dollar toast raclette shoreditch church-key.
+                Poutine etsy tote bag, cred fingerstache leggings cornhole
+                everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
+                swag, mixtape hashtag marfa readymade direct trade man braid
+                cold-pressed roof party. Small batch adaptogen coloring book
+                heirloom. Letterpress food truck hammock literally hell of wolf
+                beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
+                banh mi salvia venmo photo booth quinoa chicharrones.
+              </p>
+            </div>
+            <!-- end of single item -->
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- end of about section -->
+    <!-- services -->
+    <section class="section services" id="services">
+      <!-- title  -->
+      <div class="title-wrapper">
+        <h2 class="title">our <span class="subtitle">services</span></h2>
+      </div>
+      <!-- end of title  -->
+      <div class="section-center services-center">
+        <!-- single service -->
+        <article class="service">
+          <span class="service-icon"><i class="fas fa-wallet fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">Retirement Module</h4>
+            <p class="service-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, officia.
+            </p>
+          </div>
+        </article>
+        <!-- end of single service -->
+        <!-- single service -->
+        <article class="service">
+          <span class="service-icon"><i class="fas fa-tree fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">Invstment Module</h4>
+            <p class="service-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, officia.
+            </p>
+          </div>
+        </article>
+        <!-- end of single service -->
+        <!-- single service -->
+        <article class="service">
+          <span class="service-icon"><i class="fas fa-socks fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">xxx</h4>
+            <p class="service-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores, officia.
+            </p>
+          </div>
+        </article>
+        <!-- end of single service -->
+      </div>
+    </section>
+    <!-- end of services -->
+    <!-- featured tours -->
+    <section class="section featured-tours" id="featured">
+      <!-- title  -->
+      <div class="title-wrapper">
+        <h2 class="title">our <span class="subtitle">team</span></h2>
+      </div>
+      <!-- end of title  -->
+      <!-- featured-center -->
+      <div class="section-center featured-center ">
+        <!-- single tour -->
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img src="./images/1.png" class="tour-img" alt="" />
+            <!-- <p class="tour-date"></p> -->
+          </div>
+          <!-- tour footer -->
+          <div class="tour-footer">
+            <h4 class="tour-title">Ehsan Ramezanifard, PhD</h4>
+            <!-- tour info -->
+            <div class="tour-info">
+              <p class="tour-country">
+                <span><i class="fas"></i></span> Board Member
+              </p>
+              <!-- <div class="tour-details">
+                <p>6 days</p>
+                <p>from $2100</p>
+              </div> -->
+            </div>
+          </div>
+        </article>
+        <!-- end of single tour -->
+        <!-- single tour -->
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img src="./images/2.png" class="tour-img" alt="" />
+            <!-- <p class="tour-date">october 1th, 2019</p> -->
+          </div>
+          <!-- tour footer -->
+          <div class="tour-footer">
+            <h4 class="tour-title">Saeed Bajalan, Phd</h4>
+            <!-- tour info -->
+            <div class="tour-info">
+              <p class="tour-country">
+                <span><i class="fas fa-map"></i></span>Board Member
+              </p>
+              <!-- <div class="tour-details">
+                <p>10 days</p>
+                <p>from $4100</p>
+              </div> -->
+            </div>
+          </div>
+        </article>
+        <!-- end of single tour -->
+        <!-- single tour -->
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img src="./images/2.png" class="tour-img" alt="" />
+            <!-- <p class="tour-date">october 1th, 2019</p> -->
+          </div>
+          <!-- tour footer -->
+          <div class="tour-footer">
+            <h4 class="tour-title">Saeed Bajalan, Phd</h4>
+            <!-- tour info -->
+            <div class="tour-info">
+              <p class="tour-country">
+                <span><i class="fas fa-map"></i></span>Board Member
+              </p>
+              <!-- <div class="tour-details">
+                <p>10 days</p>
+                <p>from $4100</p>
+              </div> -->
+            </div>
+          </div>
+        </article>
+        
+        <!-- end of single tour -->
+        <!-- single tour -->
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img src="./images/2.png" class="tour-img" alt="" />
+            <!-- <p class="tour-date">october 1th, 2019</p> -->
+          </div>
+          <!-- tour footer -->
+          <div class="tour-footer">
+            <h4 class="tour-title">Saeed Bajalan, Phd</h4>
+            <!-- tour info -->
+            <div class="tour-info">
+              <p class="tour-country">
+                <span><i class="fas fa-map"></i></span>Board Member
+              </p>
+              <!-- <div class="tour-details">
+                <p>10 days</p>
+                <p>from $4100</p>
+              </div> -->
+            </div>
+          </div>
+        </article>
+
+        <!-- end of single tour -->
+      </div>
+      <!-- end of tours center -->
+      <!-- <div class="tour-link">
+        <a href="#" class="btn-primary">all tours</a>
+      </div> -->
+    </section>
+    <!-- end of featured tours -->
+    <!-- gallery  -->
+    <section class="questions">
+      <!-- title -->
+      <div class="title">
+        <h2>general questions</h2>
+      </div>
+      <!-- questions -->
+      <div class="section-center">
+        <!-- single question -->
+        <article class="question">
+          <!-- question title -->
+          <div class="question-title">
+            <p>do you accept all major credit cards?</p>
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- question text -->
+          <div class="question-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              dolore illo dolores quia nemo doloribus quaerat, magni numquam
+              repellat reprehenderit.
+            </p>
+          </div>
+        </article>
+        <!-- end of single question -->
+        <!-- single question -->
+        <article class="question">
+          <!-- question title -->
+          <div class="question-title">
+            <p>do you suppport local farmers?</p>
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- question text -->
+          <div class="question-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              dolore illo dolores quia nemo doloribus quaerat, magni numquam
+              repellat reprehenderit.
+            </p>
+          </div>
+        </article>
+        <!-- end of single question -->
+        <!-- single question -->
+        <article class="question">
+          <!-- question title -->
+          <div class="question-title">
+            <p>do you use organic ingredients?</p>
+            <!-- button -->
+            <button type="button" class="question-btn">
+              <span class="plus-icon">
+                <i class="far fa-plus-square"></i>
+              </span>
+              <span class="minus-icon">
+                <i class="far fa-minus-square"></i>
+              </span>
+            </button>
+          </div>
+          <!-- question text -->
+          <div class="question-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+              dolore illo dolores quia nemo doloribus quaerat, magni numquam
+              repellat reprehenderit.
+            </p>
+          </div>
+        </article>
+        <!-- end of single question -->
+    </section>
+    <!-- end of gallery  -->
+    <!-- contact -->
+    <section class="section deals" id="deals">
+      <!-- title  -->
+      <div class="title-wrapper">
+        <h2 class="title">Contact <span class="subtitle ">Us</span></h2>
+      </div>
+      <!-- end of title  -->
+      <form>
+        <div class="input-group">
+          <input type="email" class="form-control" placeholder="your email" />
+          <button type="submit" class="btn-submit">submit</button>
+        </div>
+      </form>
+    </section>
+    <!-- end of contact -->
+    <!-- footer -->
+    <footer class="section footer">
+      <!-- footer links -->
+      <div class="footer-links">
+        <a href="#home" class="footer-link scroll-link">home</a>
+        <a href="#about" class="footer-link scroll-link">about</a>
+        <a href="#services" class="footer-link scroll-link">services</a>
+        <a href="#featured" class="footer-link scroll-link">featured</a>
+        <a href="#gallery" class="footer-link scroll-link" scroll-link>gallery</a>
+
+      </div>
+      <!-- footer icons -->
+      <div class="footer-icons">
+        <a href="https://www.twitter.com" target="_blank" class="footer-icon"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank" class="footer-icon"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank" class="footer-icon"
+          ><i class="fab fa-squarespace"></i
+        ></a>
+      </div>
+      <p class="copyright">
+        copyright &copy; Green WealthTech company
+        <span id="date"></span>. all rights reserved
+      </p>
+    </footer>
+    <!-- js -->
+    <script src="./js/app.js"></script>
+    <script>
+
+      const about = document.querySelector(".about");
+const btns = document.querySelectorAll(".tab-btn");
+const articles = document.querySelectorAll(".content");
+about.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    // remove selected from other buttons
+    btns.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+    // hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("active");
+  }
+});
+
+const questions = document.querySelectorAll(".question");
+
+questions.forEach(function (question) {
+  const btn = question.querySelector(".question-btn");
+  // console.log(btn);
+
+  btn.addEventListener("click", function () {
+    // console.log(question);
+
+    questions.forEach(function (item) {
+      if (item !== question) {
+        item.classList.remove("show-text");
+      }
+    });
+
+    question.classList.toggle("show-text");
+  });
+});
+    </script>
+  </body>
+</html>
